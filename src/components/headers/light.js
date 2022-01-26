@@ -4,6 +4,7 @@ import { createStructuredSelector } from 'reselect';
 import { motion } from 'framer-motion';
 import tw from 'twin.macro';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { css } from 'styled-components/macro'; //eslint-disable-line
 import { NavLink, useHistory } from 'react-router-dom';
 
@@ -15,12 +16,17 @@ import logo from '../../assets/images/logo.png';
 import { ReactComponent as MenuIcon } from 'feather-icons/dist/icons/menu.svg';
 import { ReactComponent as CloseIcon } from 'feather-icons/dist/icons/x.svg';
 import { currentAccount } from '../../store/components/users/auth';
+// import {Button} from '../Button'
+
 const Header = tw.header`
   flex justify-between items-center
     bg-white sm:py-4 sm:px-8 py-3 px-2 w-full font-display
 `;
 
 export const NavLinks = tw.div`inline-block`;
+const BtnLink = tw(Link)`md:mr-4`;
+const Button = tw.button`bg-black text-white font-bold text-base px-6 py-2 
+hover:bg-opacity-75 transition duration-300 ease-linear rounded-full`;
 
 /* focus: stands for "on hover or focus"
  * focus:bg-blue-600 will apply the bg-blue-600 class on hover or focus
@@ -124,9 +130,12 @@ const HeaderLite = ({ account, roundedHeaderButton = false, logoLink, className,
         {logoLink}
         <NavLinks>
           <NavLinkk to="/marketplace">Marketplace</NavLinkk>
-          {/* <NavLinkk to="/campaign">Campaign</NavLinkk> */}
-          <NavLinkk to={`/new-profile`}>Profile</NavLinkk> 
+          <NavLinkk to="/campaign">Campaign</NavLinkk>
+          <NavLinkk to={`/new-profile`}>Profile</NavLinkk>
           {/* <Profile onClick={push}>Profile</Profile> */}
+          <BtnLink to="/create">
+            <Button type="button">Create</Button>
+          </BtnLink>
           <MetamaskProvider account={account} roundedHeaderButton={roundedHeaderButton} />
         </NavLinks>
       </DesktopNavLinks>
@@ -139,8 +148,7 @@ const HeaderLite = ({ account, roundedHeaderButton = false, logoLink, className,
           css={collapseBreakpointCss.mobileNavLinks}
         >
           <NavLinks>
-            
-            <NavLinkk to="/marketplace">Marketplace</NavLinkk>  
+            <NavLinkk to="/marketplace">Marketplace</NavLinkk>
             {/* <NavLinkk to="/campaign">Campaign</NavLinkk> */}
             <NavLinkk to={`/new-profile`}>Profile</NavLinkk>
             {/* <Profile onClick={push}>Profile</Profile> */}

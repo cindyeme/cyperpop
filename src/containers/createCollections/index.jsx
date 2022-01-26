@@ -16,11 +16,11 @@ const FormContainer = styled.div`
     }
   }
 `;
-const H1 = tw.h1`lg:text-3xl text-2xl text-white font-bold mb-8 text-center`;
+const H1 = tw.h1`lg:text-3xl text-2xl text-gray-900 font-bold mb-8 text-center`;
 const InputContainer = tw.div`relative flex flex-col relative w-full`;
 const Input = tw.input`w-full`;
-const Section = tw.section`py-24 bg-gray-800`;
-const Grid2 = tw.div`grid md:grid-cols-2 gap-x-5 gap-y-8 bg-white px-4 py-6 lg:p-8`;
+const Section = tw.section`py-24 bg-gray-300`;
+const Grid2 = tw.div`grid md:grid-cols-2 gap-x-5 gap-y-8 border-2 border-gray-400 bg-white px-4 py-6 lg:p-8`;
 const FlexJustify = tw.div`flex flex-col items-center justify-center space-y-4 mt-8`;
 const Box = tw.div`text-center flex flex-col justify-center items-center space-y-8`;
 const MarginT = tw.div`pt-6`;
@@ -40,14 +40,14 @@ export const TextWrap = tw.p`text-gray-900 text-base font-display`;
 const FlexRow = tw.div`flex items-center flex-col sm:flex-row sm:space-x-6 space-y-4 sm:space-y-0 justify-center items-center mt-10`;
 const ActionBtnCan = tw.button`bg-red-800 text-white font-bold text-base px-6 py-3 rounded-full hover:bg-opacity-75 transition duration-300 ease-linear`;
 // const ActionBtnPrev = tw.button`bg-gray-900 text-white font-bold text-base px-6 py-3 rounded-full hover:bg-opacity-75 transition duration-300 ease-linear`;
-const ActionBtnCrt = tw.button`bg-primary-200 text-white font-bold text-base px-6 py-3 rounded-full hover:bg-opacity-75 transition duration-300 ease-linear`;
+const ActionBtnCrt = tw.button`bg-gray-900 text-white font-bold text-base px-6 py-3 rounded-full hover:bg-opacity-75 transition duration-300 ease-linear`;
 // const Route = tw(Link)``;
 
-export default function CreateNftContent() {
+export default function CreateCollectionsContent() {
   return (
     <Section>
       <Wrapper>
-        <H1>Create NFT</H1>
+        <H1>Create Collections</H1>
         <Form action="#">
           <div className="box in__upload">
             <Grid2>

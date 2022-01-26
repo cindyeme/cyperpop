@@ -32,6 +32,8 @@ import Campaign from 'pages/newCampaign';
 import CreateCampaign from 'pages/create-campaign';
 import Creators from 'pages/Creators';
 import EditProfile from 'pages/edit-profile';
+import Create from 'pages/create';
+import CreateCollections from 'pages/create-collections';
 
 const App = ({ Contract, authenticate }) => {
   const [acct, setAcct] = React.useState();
@@ -99,7 +101,8 @@ const App = ({ Contract, authenticate }) => {
       <ScrollToTop />
       <Switch>
         <Route path="/create">
-          <NFTCreate />
+          <Create />
+          {/* <NFTCreate /> */}
         </Route>
         <Route path="/creator/:id">
           <CreatorPage Contract={Contract} />
@@ -139,6 +142,9 @@ const App = ({ Contract, authenticate }) => {
         </Route>
         <Route path="/campaign-details">
           <NewCampaignDetails />
+        </Route>
+        <Route path="/create-collections">
+          <CreateCollections />
         </Route>
         <Route path="/create-campaign">
           <CreateCampaign />

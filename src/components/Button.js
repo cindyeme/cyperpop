@@ -7,3 +7,4 @@ export const Button = ({ text, children, type, ...rest }) => (
     {text ? text : children}
   </PrimaryButton>
 );
+
